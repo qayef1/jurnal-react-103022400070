@@ -1,27 +1,19 @@
-function Judul() {
-  const jam = 9;
-  const saldoAwal = 70 * 1000;
+import KartuMenu from "./components/KartuMenu";
+import Panel from "./components/Panel";
+import "./App.css";
+
+function App() {
+  const N = 70;
 
   return (
-    <div className="judul">
-      <h1
-        style={{
-          color: "blue",
-          fontSize: "2rem",
-        }}
-      >
-        Kantin Salman
-      </h1>
+    <Panel judul="Menu Hari Ini">
+      <KartuMenu nama="Nasi Goreng" harga={10000 + N * 100} />
 
-      <div>
-        {jam < 12 ? <p>Selamat pagi</p> : <p>Selamat siang</p>}
-      </div>
+      <KartuMenu nama="Mie Ayam" harga={12000} kategori="Makanan" />
 
-      <p>Saldo awal kartu kantin: Rp {saldoAwal}</p>
-
-      <button disabled>Bayar</button>
-    </div>
+      <KartuMenu nama="Es Teh Manis" harga={5000} kategori="Minuman" />
+    </Panel>
   );
 }
 
-export default Judul;
+export default App;
